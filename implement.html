@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="favicon.ico">
+  <style>
+
+    h1 {
+      color:white;
+    margin-left: 70px;
+    }
+    label{
+    float: left;
+    clear: left;
+    width: 300px;
+    text-align: left;
+    margin-left: 20px;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:14px;
+    }
+
+    input[type=number]{
+    float: center;
+    margin-bottom: 5px;
+    }
+    div.first {
+  position: relative;
+  width: 550px;
+  height: 450px;
+  border: 3px solid #73AD21;
+}
+
+div.output {
+  position: absolute;
+  top: 262px;
+  left: 650px;
+  width: 750px;
+  height: 450px;
+  border: 3px solid #73AD21;
+}
+    .first {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: auto;
+      text-align: left;
+      font-family: arial;
+      bottom: 0px;
+      right: 400px;
+      background-color: white;
+    }
+
+    .output {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 0px;
+      text-align: left;
+      font-family: arial;
+      float: center;
+      background-color: white;
+    }
+    p {
+    margin-left: 15px;
+    font-weight: bold;
+    }
+    body {
+      background-image: url('ocean.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover ;
+    }
+    button {
+    clear: left;
+    margin: 20px 0px 30px 230px;
+    font-size:18px
+    }
+    h1 {
+      font-size: 50px;
+    }
+
+    h2 {
+      font-size: 25px;
+    }
+    h3 {
+      font-size:20px;
+    }
+    .topnav  {
+      float: center;
+      display: block;
+      color: #f2f2f2;
+      text-align: left;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    .topnav a{
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: left;
+      padding: 14px 120px;
+      text-decoration: none;
+    }
+    .topnav a:hover {
+      background-color:rgba(255, 255, 255, 0.5);
+      color: black;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="topnav">
+    <center>
+
+  <h1 style="text-align:center">WELCOME TO CALCULATE THE SUSCEPTIBILITY CRITERIA FOR SHIP</h1>
+  <h3 style="color:white">
+  <a href="index.html">HOME</a>
+  <a href="project.html">PROJECT</a>
+  <a href="concept.html">CONCEPT</a>
+  <a href="self.html">MATLAB CODE</a><br>
+</h3>
+</center>
+</div>
+
+
+<div class="first">
+<br>
+<br>
+<label> Please enter your length of wave:</label>  <input type="number" id="a" min="0"  step=".01"><br><br>
+ <label> Please enter your beam of the ship: </label><input type="number" id="be" min="0"  step=".01"><br><br>
+<label> Please enter the GM value in calm water:</label> <input type="number" id="gm" min="0"  step=".01"><br><br>
+<label> Please enter your service speed: </label><input type="number" id="s" min="0"  step=".01"><br><br>
+<label> Please give GMax value: </label> <input type="number" id="gmax" min="0"  step=".01"><br><br>
+<label> Please give GMin value: </label><input type="number" id="gmin" min="0"  step=".01" ><br><br>
+<button onclick="myFunction()">Submit</button>
+
+</div>
+<div class="output">
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<p id="demo7"></p>
+<p id="demo8"></p>
+<p id="demo9"></p>
+<p id="demo10"></p>
+<p id="demo11"></p>
+<p id="demo12"></p>
+
+</div>
+<script>
+function myFunction() {
+  var a = document.getElementById("a").value;
+  var be = document.getElementById("be").value;
+  var gm = document.getElementById("gm").value;
+  var s = document.getElementById("s").value;
+  var gmax = document.getElementById("gmax").valueAsNumber;
+  var gmin = document.getElementById("gmin").valueAsNumber;
+  var t= 0.8*Math.sqrt(a);
+  var w=(2*3.14)/t;
+  var b=0.5*(gmax-gmin);
+  var c=0.5*(gmax + gmin);
+  var d=(7.85*Math.sqrt(b))/be;
+  var e=(7.85*Math.sqrt(c))/be;
+  var h=0;
+  document.getElementById("demo").innerHTML =("Your period of wave is ")+t.toFixed(3);
+  document.getElementById("demo1").innerHTML =("Your wave Frequency is ")+w.toFixed(3);
+  document.getElementById("demo2").innerHTML =("Your magnitude of change of metacertric height between wave trough and wave crest is ")+b.toFixed(3);
+  document.getElementById("demo3").innerHTML =("Your mean GM is ")+c.toFixed(3);
+  document.getElementById("demo4").innerHTML =("Your Roll natural frequency corresponding to magnitude of change of GM is ")+d.toFixed(3);
+  document.getElementById("demo5").innerHTML =("Your Roll natural frequency corresponding to mean value of GM is ")+e.toFixed(3);
+  if (w>(2*e)) {
+  document.getElementById("demo6").innerHTML =("Parametric resonance will be expected from FOLLOWING SEAS ");
+  }
+  if (w<(2*e)) {
+  document.getElementById("demo6").innerHTML =("Parametric resonance will be expected from HEAD SEAS  ");
+   h=1;
+  }
+  var v=19.06*(Math.abs((2*e)-w))/(w*w);
+    var f=0;
+    if (v<s)
+    {
+      f=v;
+        document.getElementById("demo7").innerHTML =("Wave frequency is  ")+w.toFixed(3);
+
+    }
+  if (v>s) {
+    f=s;
+     w=Math.sqrt(61.61/a);
+    document.getElementById("demo7").innerHTML =("Wave frequency is  ")+w.toFixed(3);
+  }
+  var i=0;
+  if(h==1)
+		 {
+			i=w+((0.0524*f)*(w*w));
+      document.getElementById("demo8").innerHTML=("Your Encounter frequency will be ")+i.toFixed(3);
+    }
+    if(h==0)
+  		 {
+  			i=w-((0.0524*f)*(w*w));
+        document.getElementById("demo8").innerHTML=("Your Encounter frequency will be ")+i.toFixed(3);
+      }
+    document.getElementById("demo9").innerHTML =("Assumed linear roll damping coefficient is 0.03");
+    var j=(7.854*Math.sqrt(gm))/be;
+    var p=((e*e)-((0.03*j)*(0.03*j))/(i*i));
+    var q=(d*d)/(i*i);
+    document.getElementById("demo10").innerHTML =("Your P value is ")+p.toFixed(3);
+    document.getElementById("demo11").innerHTML =("Your Q value is ")+q.toFixed(3);
+    if(0.25-(0.5*q)-(0.125*(q*q))+(0.03125*(q*q*q))-((q*q*q*q)/384)<=p&&p<=(0.25+(0.5*q)))
+		 {
+       document.getElementById("demo12").innerHTML =("Your Ship is susceptible to parametric roll");
+     }
+     else{
+       document.getElementById("demo12").innerHTML =("Your Ship is NOT susceptible to parametric roll");
+     }
+}
+</script>
+</body>
+</html>

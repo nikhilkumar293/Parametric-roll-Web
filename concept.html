@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title></title>
+    <style media="screen">
+body {
+  background-image: url('ocean.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover ;
+}
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 25px;
+}
+h3 {
+  font-size:20px;
+}
+  .output {
+    color:#feffde;
+  }
+  .output:hover {
+    background-color:rgba(255, 255, 255, 0.5);
+    color: black;
+  }
+  .resonance{
+    color:#feffde;
+  }
+  .resonance:hover {
+  background-color:rgba(255, 255, 255, 0.5);
+    color: black;
+  }
+  .stability {
+      color:#feffde;
+  }
+  .stability:hover {
+  background-color:rgba(255, 255, 255, 0.5);
+    color: black;
+  }
+  .stability1 {
+      color:#feffde;
+  }
+  .stability1:hover {
+  background-color:rgba(255, 255, 255, 0.5);
+    color: black;
+  }
+  .roll {
+    color:#feffde;
+  }
+  .roll:hover {
+  background-color:rgba(255, 255, 255, 0.5);
+    color: black;
+  }
+  .parametric {
+    color:#feffde;
+  }
+  .parametric:hover {
+    background-color:rgba(255, 255, 255, 0.5);
+    color: black;
+  }
+  .damping {
+    color:#feffde;
+  }
+  .damping:hover {
+  background-color:rgba(255, 255, 255, 0.5);
+    color: black;
+  }
+  .criteria {
+    color:#feffde;
+  }
+  .criteria:hover {
+  background-color:rgba(255, 255, 255, 0.5);
+    color: black;
+  }
+  .topnav  {
+    float: center;
+    display: block;
+    color: #f2f2f2;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .topnav a{
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: left;
+    padding: 14px 120px;
+    text-decoration: none;
+  }
+  .topnav a:hover {
+    background-color:rgba(255, 255, 255, 0.5);
+    color: black;
+  }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <center>
+
+      <h1 style="color:white">CONCEPT OF PARAMETRIC ROLLING
+        </h1>
+    <h3 style="color:white">
+    <a href="index.html">HOME</a>
+    <a href="project.html">PROJECT</a>
+    <a href="implement.html">IMPLEMENTATION</a>
+    <a href="self.html">MATLAB CODE</a><br>
+</h3>
+</center>
+  </div>
+
+<div class="resonance">
+  <h2>PARAMETRIC ROLLING RESONANCE</h2>
+  <ul>
+    <li>Parametric Roll Resonance is observed as a significant amplification of roll motions, which may become dangerous to the ship, its cargo and crew.
+</li>
+    <li>The periodic change of stability as the ship moves in longitudinal waves at a speed when the ship’s wave encounter frequency is approximately twice the rolling natural frequency.
+</li>
+
+  </ul>
+</div>
+
+<div class="roll">
+  <h2>Roll Motions in Calm Water</h2>
+<li>Any disturbance in transversal (as from a wind gust) will lead to roll motions</li>
+<li>When the roll equilibrium is disturbed, the hydrostatic restoring moment acts to oppose the instantaneous roll angle and tends to return the ship back to the upright position.
+</li>
+<li>Because of inertia, the ship does not stop at the instant when the equilibrium angle is reached but continues to roll at a progressively slower velocity until a maximum roll angle is reached</li>
+<li>At this point, the excess roll restoring moment causes the ship to begin to right itself</li>
+  <li>The period of such roll oscillations in calm water is known as the “natural roll period”
+</li><br>
+<li><img src="calm1.png" alt=""></li>
+</div>
+<div class="stability">
+  <h2>WAVE TROUGH CONDITION</h2>
+  <ul>
+    <li>If a ship is located in a wave trough, the average waterplane width is significantly greater than in calm water</li>
+    <li>The flared parts of the bow and stern are more deeply immersed than in calm water and the wall-sided midship is less deep.
+</li>
+    <li>This makes the mean, instantaneous waterplane wider than in calm water with the result that the metacentric height (GM) is increased over the calm water value.
+</li>
+<br>
+<li><img src="trou.png" alt=""></li>
+</ul>
+</div>
+<div class="stability1">
+<h2>WAVE CREST CONDITION</h2>
+<ul>
+     <li>when the wave crest is located amidships, the waterplane at the immersed portions of the bow and stern are narrower than in calm water</li>
+<li>Consequently, the average waterplane is narrower and the GM is correspondingly decreased in comparison to calm water
+</li>
+    <li>As a result, the roll restoring moment of the ship changes as a function of the wave’s longitudinal position along the ship.
+</li>
+<br>
+<li><img src="crest1.png" alt=""></li>
+  </ul>
+</div>
+<div class="outcome">
+  <h2>OUTCOME</h2>
+  <ul>
+    <li>We will get period of wave
+</li>
+    <li>Wave Frequency
+</li>
+    <li>Your magnitude of change of metacentric height between wave trough and wave crest</li>
+     <li>Mean GM
+</li>
+<li>Roll natural frequency corresponding to magnitude of change of GM
+</li>
+<li>Roll natural frequency corresponding to mean value of GM
+</li>
+<li>CONDITION 1: Parametric resonance will be expected from Head seas and following seas.
+</li>
+<li>Speed of parametric roll
+</li>
+<li>Condition 2: Check for Vs(ahead speed) based on Vpr (roll speed).
+</li>
+<li>Condition 3: Calculate encounter frequency based on head sea or following sea.
+</li>
+<li>Check parameters of susceptibility criterion.
+</li>
+<li>Condition 4: Check susceptible to parametric roll</li>
+<li>If susceptible to parametric roll.
+</li>
+
+  </ul>
+
+</div>
+  </body>
+</html>
